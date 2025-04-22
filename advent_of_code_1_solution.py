@@ -9,7 +9,7 @@ data_2 = data[:, 1]  # second column
 data_1 = list(data_1)
 data_2 = list(data_2)
 
-
+### calculating similarity score between two lists
 ### ---- This function calculates the total distance between a list of tuples
 def calculate_total_difference(list_of_tuples) -> float:
     total_distance = 0
@@ -39,10 +39,32 @@ def match_lists(input_1, input_2) -> list:
         input_1.pop(index_input_1)
         input_2.pop(index_input_2)
     
-    print("Input lists are matched and the result is:", matched_list_of_tuples)
     return matched_list_of_tuples
 
-### ---- Test for advent_1_data.csv
+
+def similarity_score(input_1, input_2) -> float:
+    ## asserting input_1 and input_2 are of the same size to be matched and their size is bigger than 0
+    assert(len(input_1) > 0) and len(input_2) > 0, "Input lists must be of size greater than 0."
+    assert len(input_1) == len(input_2), "Input lists must be of the same length."
+
+    size = len(input_1)
+    similarity_score = 0
+    for i in range(size):
+        for j in range(size):
+            if(input_2[j] == input_1[i]):
+                similarity_score+=input_1[i]
+
+    return similarity_score
+
+
+
+# ### ---- Test for advent_1_data.csv
 if __name__=="__main__":
-    matched_list = match_lists(data_1, data_2)
-    calculate_total_difference(matched_list)
+    user_input = float(input("which part do you need ? \n 0 for part I or 1 for part II "))
+    if(user_input) == 0.0:
+        matched_list = match_lists(data_1, data_2)
+        calculate_total_difference(matched_list)
+    else:
+        print("\033[92m" + "similarity score is : \033[0m", similarity_score(data_1, data_2)) 
+
+
