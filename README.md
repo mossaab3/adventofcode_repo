@@ -12,6 +12,7 @@ This repository contains solutions for the exercises provided in the [Advent of 
 ## How to Use
 
 To view the solutions, run the corresponding code file. For example, execute the `advent_of_code_1_solution` file to see the solutions for Test 1.
+all the rest are composed of two parts `advent_of_code_i_solution.py` and `advent_of_code_i_part_2_solution.py`   
 
 ## Additional Notes
 

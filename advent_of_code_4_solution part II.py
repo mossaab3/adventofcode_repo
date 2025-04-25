@@ -12,7 +12,6 @@ phrase_size = len(the_phrase)
 phrase_square_side_size = int(math.sqrt(phrase_size))
 print(phrase_size)
 print(phrase_square_side_size)
-input("")
 ## the phrase must be a square 
 
 def is_word_valid(word_to_check, reference_word=the_word):
@@ -55,4 +54,4 @@ def computer_number_of_x_sam_form(phrase):
     return number_of_x_sam_form
 
 if __name__ == "__main__":
-    print(computer_number_of_x_sam_form(the_phrase))
+    print("\033[92mnumber of x sam form is : ", computer_number_of_x_sam_form(the_phrase), "\033[0m")
